@@ -1,0 +1,31 @@
+<div style="margin-top: 2px">
+    <img  src="/assets/img/single_user.png"  id="icon" alt="User Icon">
+</div>
+
+<form #signInForm ="ngForm" (ngSubmit)="signInForm.valid && onSubmit(signInForm)" class="form1 container">
+    <input type="text" name="email" #email="ngModel" [(ngModel)]="model.email" 
+    placeholder="Email" [pattern]="emailRegex" required [ngClass]="{'invalid-textbox' : signInForm.submitted && !email.valid }" class="form-control">
+    <div *ngIf="signInForm.submitted && email.errors?.pattern" >
+        <label for=""> Invalid email address. </label>
+    </div>
+    <input type="password" name="password" #password="ngModel"
+     [(ngModel)]="model.password" placeholder="Password" required minlength="4" [ngClass]="{'invalid-textbox': signInForm.submitted && !password.valid }" class="form-control">
+
+    <div *ngIf="signInForm.submitted && password.errors?.minlength">
+        <label for="" class="validation-message" >Minimum 4 characters.</label>
+    </div>
+    <div class="submit-btn form-control bg-secondary" style="margin-bottom: 60px">
+        <button type="submit" value="Sign In" class="btn btn-primary btnSubmit form-control" style="margin-top: 40px">Sign In</button>
+    </div>
+</form>
+
+<!-- Success message -->
+<div class="success" *ngIf="showSucessMessage">
+        Saved successfully
+</div>
+      
+
+<!-- Error message -->
+<div class="alert" *ngIf="serverErrorMessages">
+{{serverErrorMessages}}
+</div>

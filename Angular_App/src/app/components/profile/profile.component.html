@@ -1,0 +1,353 @@
+  <div class="profile container card" style="height:auto  ;">
+    <div class="row hero-unit card-body">
+  <!-- --------------------------------- -->
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<div class="container">
+<div class="row flex-lg-nowrap">
+  <div class="col-12 col-lg-auto mb-3" style="width: 200px;">
+    <div class="card p-3">
+      <div class="e-navlist e-navlist--active-bg">
+        <ul class="nav">
+          <li class="nav-item"><a class="nav-link px-2 active" href="./overview.html"><i class="fa fa-fw fa-bar-chart mr-1"></i><span>Overview</span></a></li>
+          <li class="nav-item"><a class="nav-link px-2" href="./users.html"><i class="fa fa-fw fa-th mr-1"></i><span>CRUD</span></a></li>
+          <li class="nav-item"><a class="nav-link px-2" href="./settings.html"><i class="fa fa-fw fa-cog mr-1"></i><span>Settings</span></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="row">
+      <div class="col mb-3">
+        <div class="card">
+          <div class="card-body">
+            <div class="e-profile">
+              <div class="row">
+                <div class="col-12 col-sm-auto mb-3">
+                  <div class="mx-auto" style="width: 140px;">
+                    <div class="d-flex justify-content-center align-items-center rounded" style="height: 140px; background-color: rgb(233, 236, 239);">
+                      <span style="color: rgb(166, 168, 170); font: bold 8pt Arial;">140x140</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="col d-flex flex-column flex-sm-row justify-content-between mb-3">
+                  <div class="text-center text-sm-left mb-2 mb-sm-0">
+                    <h4 class="pt-sm-2 pb-1 mb-0 text-nowrap">{{userDetails.fullName}}</h4>
+                    <p class="mb-0">{{userDetails.email}}</p>
+                    <div class="text-muted"><small>Last seen 2 hours ago</small></div>
+                    <div class="mt-2">
+                      <button class="btn btn-primary" type="button">
+                        <i class="fa fa-fw fa-camera"></i>
+                        <span>Change Photo</span>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="text-center text-sm-right">
+                    <span class="badge badge-secondary">administrator</span>
+                    <div class="text-muted"><small>Joined 09 Dec 2017</small></div>
+                  </div>
+                </div>
+              </div>
+              <nav>
+                <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                  <a class="nav-item nav-link active" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Profile</a>
+                  <a class="nav-item nav-link" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Home</a>
+                  <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Other</a>
+                </div>
+              </nav>  
+              
+              <div class="tab-content" id="nav-tabContent">
+                <!-- Setinfg 1------------------------>
+                <div class="tab-pane fade show active" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                    <div class="tab-content pt-3">
+                      <div class="tab-pane active">
+                        <form class="form" #empForm="ngForm" (ngSubmit)="onSubmit(empForm)">
+                          <div class="row">
+                            <div class="col">
+                              <div class="row">
+                                <div class="col-12 col-sm-6 mb-3">
+                                  <div class="mb-2" style="padding-bottom: 10px"><b>Change profile info..</b></div>
+                                  <div class="row">
+                                      <div class="form-group">
+                                          <input type="hidden" name="id" #name="ngModel" [(ngModel)]="profileDetails.id">
+                                          <input type="hidden" name="user" #name="ngModel" [(ngModel)]="profileDetails.user">
+                                          <input type="hidden" name="profile_img" #name="ngModel" [(ngModel)]="profileDetails.profile_img">
+                                        </div>
+                                    <div class="col">
+                                      
+                                      <div class="form-group">
+                                        <label>User Name</label>
+                                        <input class="form-control" type="text" name="userName" #name="ngModel"
+                                         [(ngModel)]="profileDetails.userName"  value={{profileDetails.userName}}   
+                                         placeholder={{profileDetails.userName}}>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="row">
+                                    <div class="col">
+                                      <div class="form-group">
+                                        <label>Working Place</label>
+                                        <input class="form-control" type="text" name="office" #name="ngModel" 
+                                        [(ngModel)]="profileDetails.office"  value={{profileDetails.office}}  
+                                        placeholder={{profileDetails.office}}>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="row">
+                                    <div class="col">
+                                      <div class="form-group">
+                                          <label>Gender</label>
+                                        <select class="form-control" [(value)]="profileDetails.gender"
+                                         name ="gender" #name="ngModel" [(ngModel)]="profileDetails.gender">
+                                          <option *ngFor="let item of listItems; let i = index" [value]="item" 
+                                          [tabIndex]= i>{{item}}</option>
+                                        </select>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="col-12 col-sm-6 mb-3" style="padding-top: 34px">
+                                  <div class="">
+                                    <div class="mb-2"><b></b></div>
+                                    <div class="row">
+                                      <div class="col">
+                                        <div class="form-group">
+                                          <label>Current Position</label>
+                                          <input class="form-control" type="text" name="position" #name="ngModel" 
+                                          [(ngModel)]="profileDetails.position"  value={{profileDetails.position}} 
+                                          placeholder={{profileDetails.position}}>
+                                        </div>
+                                      </div>
+                                    </div>  
+                                       <div class="form-group">
+                                          <div class="input-group">
+                                            <input class="form-control" placeholder= "{{profileDetails.birthday}}" name="birthday" #name="ngModel" 
+                                                   name="dp" [(ngModel)]="profileDetails.birthday" ngbDatepicker #d="ngbDatepicker">
+                                            <div class="input-group-append">
+                                              <button class="btn btn-outline-secondary material-icons" (click)="d.toggle()" type="button">date_range</button>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      <hr/>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="col mb-3">
+                                  <div class="form-group">
+                                    <label>About</label>
+                                   <textarea class="form-control" rows="5" placeholder={{profileDetails.about}} 
+                                   name="about" #name="ngModel" [(ngModel)]="profileDetails.about"  
+                                   value={{profileDetails.about}}></textarea>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col d-flex justify-content-end">
+                              <button class="btn btn-primary" type="submit">Save Changes</button>
+                            </div>
+                          </div>
+                        </form>
+      
+                      </div>
+                    </div>
+                  </div>
+                <!-- seting -2----------- -->
+                <div class="tab-pane fade" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                    <div class="tab-content pt-3">
+                      <div class="tab-pane active">
+                        <form #userdata="ngForm" (ngSubmit)="onSubmit(userdata)">
+                          <div class="row">
+                            <div class="col">
+                              <div class="row">
+                                <div class="col col-8">
+                                  <div class="form-group">
+                                    <label>Full Name</label>
+                                    <input class="form-control" type="text"  placeholder="{{profileDetails.userName}}" value="{{profileDetails.userName}}" required>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="col col-8">
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Email address</label>
+                                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="{{userDetails.email}}" value="{{userDetails.email}}" required>
+                                        <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+                                      </div>                                
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-12 col-sm-6 mb-3 card card-body" style="margin-left: 15px">
+                              <div class="mb-2" style="padding-top: 6px"><b>Change Password</b>
+                              <tr style="padding-bottom: 0%;float: right"><td>
+                              </td><td class="text-center">
+                                  <a class="action-btn" *ngIf= statusEdit (click)="onEdit()">
+                                    <i class="material-icons">edit</i>
+                                  </a>
+                                  <a class="action-btn" *ngIf= statusCancel (click)="onCancel()">
+                                    <i class="material-icons">cancel</i>
+                                  </a>
+                                  <a class="action-btn" *ngIf= stateUpdt (click)="onUpdate(userDetails._id,userdata)">
+                                    <i class="material-icons">assignment_turned_in</i>
+                                  </a>
+                                  <a class="action-btn" *ngIf= stateUpdtd >
+                                    <i class="material-icons">check_circle</i>
+                                  </a>
+                              </td>
+                            </tr>
+                            </div>
+                            
+                              <div class="row">
+                                <div class="col">
+                                  <div class="form-group">
+                                    <label>Current Password</label>
+                                    <input class="form-control" [disabled]= statusEdit type="password" placeholder="••••••">
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="col">
+                                  <div class="form-group">
+                                    <label>New Password</label>
+                                    <input class="form-control" [disabled]= statusEdit type="password" placeholder="••••••">
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="col">
+                                  <div class="form-group">
+                                    <label>Confirm <span class="d-none d-xl-inline">Password</span></label>
+                                    <input class="form-control" [disabled]= statusEdit desa  type="password" placeholder="••••••"></div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-12 col-sm-5 offset-sm-1 mb-3" style="margin-right: 10px;margin-left: auto">
+                              <div class="mb-2"><b>Keeping in Touch</b></div>
+                              <div class="row">
+                                <div class="col">
+                                  <label>Email Notifications</label>
+                                  <div class="custom-controls-stacked px-2">
+                                    <div class="custom-control custom-checkbox">
+                                      <input type="checkbox" class="custom-control-input" id="notifications-blog" checked="">
+                                      <label class="custom-control-label" for="notifications-blog">Blog posts</label>
+                                    </div>
+                                    <div class="custom-control custom-checkbox">
+                                      <input type="checkbox" class="custom-control-input" id="notifications-news" checked="">
+                                      <label class="custom-control-label" for="notifications-news">Newsletter</label>
+                                    </div>
+                                    <div class="custom-control custom-checkbox">
+                                      <input type="checkbox" class="custom-control-input" id="notifications-offers" checked="">
+                                      <label class="custom-control-label" for="notifications-offers">Personal Offers</label>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col d-flex justify-content-end">
+                              <button class="btn btn-primary" type="submit">Save Changes</button>
+                            </div>
+                          </div>
+                        </form>
+      
+                      </div>
+                    </div>
+                  </div>
+                <!--  -->
+                
+                <!-- seting-3=============== -->
+                <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+                  <div class="tab-content pt-3">
+                    <div class="tab-pane active">
+                      <form class="form" novalidate="">
+                        <div class="row">
+                          <div class="col">
+                            <div class="row">
+                              <div class="col">
+                                <div class="form-group">
+                                  <label>CV</label>
+                                  <div class="form-control custom-file">
+                                      <input type="file" class="custom-file-input" id="customFileLang" lang="es">
+                                      <label class="custom-file-label" for="customFileLang">Seleccionar Archivo</label>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col">
+                                <div class="form-group">
+                                  <label>Skills</label>
+                                  <input class="form-control" type="text" name="username" placeholder="johnny.s" value="johnny.s">
+                                </div>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="col">
+                                <div class="form-group">
+                                  <label>Languages</label>
+                                  <input class="form-control" type="text" placeholder="user@example.com">
+                                </div>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="col mb-3">
+                                  <div class="form-group">
+                                      <label>Colifications</label>
+                                      <input class="form-control" type="text" placeholder="user@example.com">
+                                    </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-12 col-sm-6 mb-3">
+                          </div>
+                          <div class="col-12 col-sm-5 offset-sm-1 mb-3">
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col d-flex justify-content-end">
+                            <button class="btn btn-primary" type="submit">Save Changes</button>
+                          </div>
+                        </div>
+                      </form>
+    
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-3 mb-3">
+        <div class="card mb-3">
+          <div class="card-body">
+            <div class="px-xl-3">
+              <button class="btn btn-block btn-outline-secondary">
+                <i class="fa fa-users"></i>
+                <span>New networks</span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="">
+          <div class="card-body">
+            <h6 class="card-title font-weight-bold">Users Mange</h6>
+            <p class="card-text">Get fast, free help from our friendly assistants.</p>
+            <!-- <button type="button" class="btn btn-primary">Manage
+                <h2 class="underlineHover" [routerLink]="['/usersMange']" routerLinkActive="active" >Profile </h2> 
+            </button> -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+</div>
+</div>

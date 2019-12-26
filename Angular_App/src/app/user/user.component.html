@@ -1,0 +1,21 @@
+<!-- <div class="wrapper" >
+    <div id="formContent">
+      <h2 class="underlineHover" [routerLink]="['/login']"  routerLinkActive="active" >Sign In </h2> 
+      <h2 class="underlineHover" [routerLink]="['/signup']" routerLinkActive="active" >Sign Up </h2>
+      <router-outlet></router-outlet>
+    </div>
+</div> -->
+<div class="wrapper-inner wrapper"> 
+  <div class="col-sm-6 col-md-3 boxout">
+    <div class="user-content">
+      <div class="user-content-header">
+        <div id="links">
+          <h2 class="underlineHover" [routerLink]="['/login']"  routerLinkActive="active" >Sign In </h2> 
+          <h2 class="underlineHover" [routerLink]="['/signup']" routerLinkActive="active" >Sign Up </h2>
+        </div>
+      </div>
+      <div class="card-dody bg-secondary" style="background-color: navy">
+          <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,482 @@
+
+.btn:hover,
+.btn:focus,
+.btn:active {
+  color: #fff;
+  box-shadow: none;
+  outline: none;
+  background: #68B737;
+}
+
+.btn.btn-primary {
+  font-size: 15px;
+  background: #006699;
+  text-align: center;
+  display: inline-block;
+  border: none;
+  outline: none;
+  color: #fff;
+  vertical-align: top;
+  text-transform: capitalize;
+  line-height: 42px;
+  font-weight: bold;
+  outline: none;
+  padding: 0 27px;
+}
+
+.btn.btn-primary i {
+  font-size: 14px;
+  margin-left: 7px;
+}
+
+
+footer .newsletter-form .form-group button[type="submit"],
+.form-group input[type="text"],
+.form-group input[type="email"],
+.contact-info p i,
+.blog-detail .news-detail-share a,
+.login-page button[type="submit"],
+.form-group .social-register a i {
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+/*
+====================================================================
+    bizface-pagination
+====================================================================
+*/
+
+nav.pagination {
+  margin: 50px 0 0 0;
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+}
+
+nav.pagination a {
+  color: #ffffff;
+  display: inline-block;
+  margin-right: 10px;
+  padding: 5px 15px;
+  background-color: #68B737;
+}
+
+nav.pagination span.current {
+  color: #fff;
+  display: inline-block;
+  margin-right: 10px;
+  padding: 5px 15px;
+  background-color: #006699;
+}
+
+nav.pagination a:hover {
+  background-color: #006699;
+}
+
+
+@media screen and (max-width: 320px){
+  nav.pagination a, nav.pagination span.current {
+    margin-right: 0;
+  }
+}
+
+/*
+====================================================================
+    bizface-footer
+====================================================================
+*/
+
+footer {
+  position: relative;
+  background: #006699;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  color: #fff;
+  padding: 70px 0 70px;
+}
+
+footer .footer-widget {
+  position: relative;
+}
+
+footer h3 {
+  font-size: 18px;
+  font-weight: 500;
+  text-transform: capitalize;
+  margin-bottom: 30px;
+  color: #ffffff;
+  position: relative;
+  padding-left: 15px;
+}
+
+footer h3::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  width: 2px;
+  height: 15px;
+  background-color: #68B737;
+  left: 0;
+}
+
+footer .about-widget .text {
+  margin-bottom: 20px;
+  line-height: 1.8em;
+}
+
+footer .footer-widget address {
+  margin-top: 20px;
+}
+
+footer .footer-widget address p {
+  margin-bottom: 20px;
+}
+
+footer .footer-widget address p:last-child {
+  margin-bottom: 0;
+}
+
+footer .footer-widget address p a {
+  color: #68B737;
+  background-color: #ffffff;
+  width: 28px;
+  height: 28px;
+  line-height: 28px;
+  margin-right: 10px;
+  text-align: center;
+  display: inline-block;
+}
+
+footer .footer-widget address p a:hover {
+  background-color: #68B737;
+  color: #ffffff;
+}
+
+footer .links-widget ul li a:before {
+  content: '\f105';
+  font-family: 'FontAwesome';
+  margin-right: 11px;
+  color: #68B737;
+}
+
+footer .links-widget ul li {
+  padding: 5px 0;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.5);
+}
+
+footer .links-widget ul li:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+footer .subscribe-widget {
+  position: relative;
+}
+
+footer .links-widget ul li a {
+  text-transform: capitalize;
+}
+
+.footer .link-widget ul li a:hover {
+  color: #68B737;
+}
+
+footer .subscribe-widget .text {
+  position: relative;
+  line-height: 1.8em;
+  margin-bottom: 30px;
+}
+
+footer .subscribe-widget .form-group input[type="text"],
+footer .subscribe-widget .form-group input[type="email"] {
+  position: relative;
+  display: block;
+  width: 100%;
+  line-height: 24px;
+  padding: 9px 16px;
+  height: 42px;
+  color: #222222;
+  outline: none;
+  font-size: 13px;
+  background-color: #ffffff;
+  -webkit-transition: all 300ms ease;
+  -ms-transition: all 300ms ease;
+  -o-transition: all 300ms ease;
+  -moz-transition: all 300ms ease;
+  transition: all 300ms ease;
+}
+
+footer .subscribe-widget .form-group input[type="text"]:focus,
+footer .subscribe-widget .form-group input[type="email"]:focus {
+  background-color: #f1f1f1;
+}
+
+footer .subscribe-widget .form-group {
+  position: relative;
+  display: block;
+  margin-bottom: 30px;
+}
+
+footer .newsletter-form .bizface-btn {
+  text-transform: capitalize;
+  padding: 5px 15px;
+}
+
+footer .newsletter-form .form-group button[type="submit"] {
+  padding: 0 30px;
+  background-color: #ffffff;
+  border: 0;
+  text-transform: capitalize;
+  font-weight: 600;
+  color: #68B737;
+}
+
+footer .newsletter-form .form-group button:hover[type="submit"] {
+  padding: 0 30px;
+  background-color: #68B737;
+  color: #ffffff;
+}
+
+
+/*
+====================================================================
+   footer-media screen
+====================================================================
+*/
+
+@media only screen and (min-width: 460px) and (max-width: 767px) {
+  .links-widget .col-sm-6 {
+    float: left;
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .footer-widget {
+    margin-bottom: 50px;
+  }
+  .footer-widget.subscribe-widget {
+    margin-bottom: 0;
+  }
+  .sec-title {
+    padding: 0 15px;
+  }
+}
+
+
+/*
+====================================================================
+   bizface-footer-bottom
+====================================================================
+*/
+
+.footer-bottom {
+  position: relative;
+  font-size: 14px;
+  padding: 13px 5px;
+  line-height: 24px;
+  text-align: center;
+  background-color: #045781;
+  color: #ffffff;
+  width: 100%;
+  float: left;
+}
+
+.footer-bottom .text {
+  margin-top: 5px;
+}
+
+.footer-bottom .social-links * {
+  color: rgb(255, 255, 255);
+  display: inline-table;
+  list-style: outside none none;
+  transition: all 250ms ease-in-out;
+  -webkit-transition: all 250ms ease-in-out;
+  margin-left: 3px;
+}
+
+.footer-bottom .social-links a {
+  width: 28px;
+  height: 28px;
+  line-height: 28px;
+  text-align: center;
+  background-color: transparent;
+  display: inline-block;
+}
+
+.footer-bottom .social-links li {
+  display: inline-block;
+}
+
+.footer-bottom .social-links li.active a,
+.footer-bottom .social-links li a:hover,
+.footer-bottom .social-links li a:hover i,
+.footer-bottom .social-links li.active a i {
+  background-color: #ffffff;
+  color: #68B737;
+}
+
+.footer-bottom .social-links i {
+  font-size: 13px;
+  margin: 0;
+}
+
+@media only screen and (max-width: 767px) {
+  .footer-bottom .col-sm-6 .text-left {
+    text-align: center;
+  }
+  .footer-bottom .col-sm-6 .text-right {
+    text-align: center;
+    margin-top: 15px;
+  }
+}
+
+
+/*==============================
+	EMAIL SUBSCRIPTION
+ ===============================*/
+.email-subscription {
+  background: url(http://placehold.it/1920x440) no-repeat center;
+  background-size: cover;
+  position: relative;
+  z-index: 1;
+  padding: 2em 0;
+}
+.email-subscription:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+}
+.email-subscription .icon-block {
+  font-size: 84px;
+  color: #ffffff;
+  float: left;
+  margin-top: 21px;
+}
+@media (max-width: 991px) {
+  .email-subscription .icon-block {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    float: none;
+    text-align: center;
+  }
+}
+@media (min-width: 992px) {
+  .email-subscription .content-block {
+    margin-left: 108px;
+  }
+}
+@media (max-width: 991px) {
+  .email-subscription .content-block {
+    text-align: center;
+  }
+}
+.email-subscription .content-block h2 {
+  font-size: 36px;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin-top: 30px;
+  margin-bottom: 6px;
+}
+@media (max-width: 991px) {
+  .email-subscription .content-block h2 {
+    font-size: 30px;
+    margin-top: 0;
+  }
+}
+@media (max-width: 767px) {
+  .email-subscription .content-block h2 {
+    font-size: 24px;
+  }
+}
+.email-subscription .content-block p {
+  font-size: 24px;
+  color: #ffffff;
+  margin-bottom: 30px;
+}
+@media (max-width: 767px) {
+  .email-subscription .content-block p {
+    margin-bottom: 0;
+  }
+}
+.email-subscription .subscription-form {
+  margin-top: 54px;
+}
+@media (max-width: 767px) {
+  .email-subscription .subscription-form {
+    margin-top: 24px;
+  }
+}
+.email-subscription .subscription-form .form-control {
+  border-radius: 0;
+  height: 48px;
+}
+@media (max-width: 767px) {
+  .email-subscription .subscription-form .form-control {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+.email-subscription .subscription-form .form-control:focus {
+  box-shadow: none;
+}
+.email-subscription .subscription-form button {
+  width: 100%;
+  height: 48px;
+}
+@media (max-width: 991px) {
+  .email-subscription .subscription-form button {
+    margin-bottom: 72px;
+  }
+}
+@media (max-width: 767px) {
+  .email-subscription .subscription-form button {
+    margin-top: 30px;
+    display: block;
+    width: 160px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/*
+====================================================================
+    bizface scroll-top
+====================================================================
+*/
+
+a.scroll-top {
+  background-color: #68B737;
+  bottom: 45px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 24px;
+  height: 40px;
+  font-weight: bold;
+  line-height: 38px;
+  position: fixed;
+  right: 12px;
+  text-align: center;
+  width: 40px;
+  z-index: 999;
+}
+
+a.scroll-top::before {
+  font-size: 25px;
+}

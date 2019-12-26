@@ -1,0 +1,12 @@
+.profile{
+    height: 100%;
+    position: relative;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+
+.container{
+    width: 100%;
+    max-width: 99%;
+    min-width: 60%;
+}

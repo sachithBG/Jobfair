@@ -1,0 +1,77 @@
+
+
+<div class="profile-body grey" style="height: 100%;">
+    <form class="form-control" #employeeForm="ngForm" (ngSubmit)="onSubmit(employeeForm)" class="container card">
+    <div class="row no-gutters profile" style="height: 800px">
+
+        <div class="col-5 col-md-3" style="text-align: center">
+            <input type="hidden" name="_id" #name="ngModel" [(ngModel)]="userMnDetails._id">
+            <div class="row" style="margin: 110px 4px 4px 4px;text-align: center">
+              <div class="input-field col s12">
+                <input type="text" name="fullName" #name="ngModel" [(ngModel)]="userMnDetails.fullName" placeholder="Enter full name" required>
+              </div>
+            </div>
+            <div class="row" style="margin: 20px 4px 4px 4px;text-align: center">
+              <div class="input-field col s12">
+                <input  type="text" name="email" #name="ngModel" [(ngModel)]="userMnDetails.email" placeholder="abc@gmail.com">
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12" style="padding: 60px"> 
+                <button class="btn btn-custom " type="button" (click)="resetForm(employeeForm)">Reset</button>
+                <button class="btn btn-custom " type="submit" >Submit</button>
+              </div>
+            </div>
+
+            <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fa fa-download fa-sm text-white-50"></i> Generate Report</a>
+            </div>
+
+      <!--  -->
+        <div class="col-13 col-sm-6 col-md-9">
+            <div class="card-body text-primary" style="float: left;">
+                <div class="panel panel-primary filterable">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Users</h3>
+                        <div class="pull-right">
+                            <button class="btn btn-default btn-xs btn-filter"><span class="material-icons"> filter_list</span> Filter</button>
+                        </div>
+                    </div>
+                      <table class="table responsive-table highlight table-striped" >
+                          <thead>
+                              <tr class="filters" >
+                                  <th style="width:50px"><input type="text" class="form-control"  placeholder="#" [value]="searchValue" disabled></th>
+                                  <th width="150px"><input type="text" class="form-control sm"  placeholder="First Name" [value]="searchValue" disabled></th>
+                                  <th width="150px"><input type="text" class="form-control"  placeholder="Last Name" [value]="searchValue" disabled></th>
+                                  <th width="200px"><input type="text" class="form-control"  placeholder="email" [value]="searchValue" disabled></th>
+                              </tr>
+                          </thead>
+                          <tbody class="" style="height: 400px">
+                              <tr *ngFor="let emp of userMnDetails; let i = index">
+                                  <td style="width: 100px">{{i + 1}}</td>
+                                  <td  >{{emp.fullName.split(' ')[0]}}</td>
+                                  <td class="table-bordered" >{{emp.fullName.split(' ')[1]}}</td>
+                                  <td >{{emp.email}}</td>
+                                  <td style="width: 100px">
+                                      <a class="action-btn" (click)="onEdit(emp)">
+                                        <i class="material-icons" >edit</i>
+                                      </a>
+                                      <a class="action-btn" style="float: right" (click)="onDelete(emp._id,employeeForm)">
+                                        <i class="material-icons">delete</i>
+                                      </a>
+                                    </td>
+                                </tr>
+                                <tr class="table-bordered">
+                                  <td style="text-align: center">End</td>
+                                </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                  </div>
+        </div>
+        <!-- ----- -->
+        
+        </div>
+  </form>
+    <!-- <app-footer class="footer-bottom" style="margin-bottom: 0%;"></app-footer> -->
+    </div>
+    
